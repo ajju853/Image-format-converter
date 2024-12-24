@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Format Converter By Ajju</title>
+
+    <link rel="stylesheet" href="/src/styles/main.css">
+</head>
+
+<body>
+    <canvas id="bg"></canvas>
+    <div class="container">
+        <div class="converter-box">
+            <header class="header">
+                <h1>Image Format Converter</h1>
+                <p class="subtitle">Convert between JPG, PNG and more formats instantly</p>
+            </header>
+
+            <div class="upload-area" id="dropZone">
+                <div class="upload-icon">
+                    <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                        <polyline points="17 8 12 3 7 8" />
+                        <line x1="12" y1="3" x2="12" y2="15" />
+                    </svg>
+                </div>
+                <p>Drag & Drop image here or</p>
+                <input type="file" id="fileInput" accept="image/*">
+                <button id="uploadBtn" class="btn-primary">Choose Image</button>
+            </div>
+
+            <div id="fileInfo" class="file-info hidden">
+                <p>Current format: <span id="currentFormat"></span></p>
+            </div>
+
+            <div class="conversion-options">
+                <div class="format-buttons" id="formatButtons">
+                    <button class="format-btn" data-format="png">Convert to PNG</button>
+                    <button class="format-btn" data-format="jpg">Convert to JPG</button>
+                    <button class="format-btn" data-format="webp">Convert to WebP</button>
+                </div>
+            </div>
+
+            <div id="status" class="status hidden"></div>
+
+            <div id="result" class="hidden">
+                <div class="preview-container">
+                    <img id="preview" alt="Preview">
+                </div>
+                <div class="download-section">
+                    <a id="downloadBtn" class="btn-primary hidden">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" class="download-icon">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                            <polyline points="7 10 12 15 17 10" />
+                            <line x1="12" y1="15" x2="12" y2="3" />
+                        </svg>
+                        Download Converted Image
+                    </a>
+                </div>
+            </div>
+
+            <footer class="footer">
+                <p>Supported formats: JPG ↔ PNG ↔ WebP</p>
+                <a href="mailto:support@imageconverter.com" class="feedback-link">Send Feedback</a>
+            </footer>
+        </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+</body>
+
+</html>
